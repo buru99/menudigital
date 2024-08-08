@@ -164,6 +164,12 @@ def main(page: ft.Page):
     def placeholder(e):
         page.clean()
         page.add(ft.Text("Em breve!"))
+        page.add(ft.BottomAppBar(
+        bgcolor=ft.colors.TRANSPARENT,
+        height=60,
+        width=300,
+        content=ft.TextButton(text="Página Inicial", on_click=menu_inicial)
+    ))
         page.update()
 
     # CAPA DA PÁGINA
@@ -173,7 +179,7 @@ def main(page: ft.Page):
     categorias = ft.ListView(
         controls=[
             ft.FloatingActionButton(text="Pizzas", width=600, bgcolor=ft.colors.ORANGE_ACCENT, on_click=Pizzas),
-            ft.FloatingActionButton(text="Hamburguers", width=600, bgcolor=ft.colors.ORANGE_ACCENT, on_click=Pizzas),
+            ft.FloatingActionButton(text="Hamburguers", width=600, bgcolor=ft.colors.ORANGE_ACCENT, on_click=placeholder),
             ft.FloatingActionButton(text="Combos", width=600, bgcolor=ft.colors.ORANGE_ACCENT, on_click=placeholder),
             ft.FloatingActionButton(text="Carnes", width=600, bgcolor=ft.colors.ORANGE_ACCENT, on_click=placeholder),
             ft.FloatingActionButton(text="Bebidas", width=600, bgcolor=ft.colors.ORANGE_ACCENT, on_click=placeholder),
